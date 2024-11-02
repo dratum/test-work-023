@@ -1,5 +1,6 @@
 import { Formik, FormikHelpers } from "formik";
 import { Box, Button, TextField } from "@mui/material";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 interface Values {
   name: string;
@@ -43,7 +44,7 @@ export const Form = ({
       ) => {
         load(true);
         try {
-          const response = await fetch("http://localhost:3000/api/send", {
+          const response = await fetch(`${apiUrl}`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
