@@ -1,4 +1,4 @@
-import Grid from "@mui/material/Grid2";
+import Grid from "@mui/material/Grid";
 import { Card, CardContent, Typography } from "@mui/material";
 
 export const CardSimple = ({ id }: { id: number }) => {
