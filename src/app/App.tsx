@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { ContactPage } from "../pages/contactPage/ui/contactsPage.tsx";
 import { Header } from "../shared/ui/header.tsx";
 import { Footer } from "../shared/ui/footer.tsx";
+import { NotFoundPage } from "../pages/notFoundPage/notFoundPage.tsx";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route index element={<MainPage />} />
         <Route path='/contact-us' element={<ContactPage />} />
+        <Route path='*' element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </>
