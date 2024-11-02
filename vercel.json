@@ -1,3 +1,1 @@
-{
-  "rewrites": [{ "source": "/contact-us", "destination": "/contact-us.html" }]
-}
+{ "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }] }
