@@ -1,19 +1,20 @@
 import "./App.css";
-
-import { MainPage } from "../pages/ui/mainPage.tsx";
-
-import { Layout } from "../shared/ui/layout.tsx";
+import { MainPage } from "../pages/mainPage/ui/mainPage.tsx";
 import { Route, Routes } from "react-router-dom";
-import { ContactPage } from "../pages/ui/contactsPage.tsx";
+import { ContactPage } from "../pages/contactPage/ui/contactsPage.tsx";
+import { Header } from "../shared/ui/header.tsx";
+import { Footer } from "../shared/ui/footer.tsx";
 
 function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
+    <>
+      <Header />
+      <Routes>
         <Route index element={<MainPage />} />
         <Route path='/contact-us' element={<ContactPage />} />
-      </Route>
-    </Routes>
+      </Routes>
+      <Footer />
+    </>
   );
 }
 

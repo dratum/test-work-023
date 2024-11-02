@@ -21,7 +21,7 @@ export const Footer = () => {
           justifyContent: "center",
         }}
       >
-        <Typography variant='h6'>Some company, 2024</Typography>
+        <Typography component={"p"}>Some company, 2024</Typography>
       </Toolbar>
     </Box>
   );

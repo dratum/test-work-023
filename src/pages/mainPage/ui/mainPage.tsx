@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { VideoPlayer } from "../../shared/ui/videoPlayer.tsx";
-import { ContactButton } from "../../shared/ui/button.tsx";
-import { CardSimple } from "../../shared/ui/card.tsx";
+import { VideoPlayer } from "../../../shared/ui/videoPlayer.tsx";
+import { ContactButton } from "../../../shared/ui/button.tsx";
+import { CardSimple } from "../../../shared/ui/card.tsx";
 
 export const MainPage = () => {
   console.log("render");
