@@ -1,8 +1,6 @@
 import { Box, Toolbar, Typography } from "@mui/material";
 
 export const Footer = () => {
-  console.log("render");
-
   return (
     <Box
       component='footer'

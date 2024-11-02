@@ -6,8 +6,6 @@ const StyledAppBar = styled(AppBar)({
   backgroundColor: "#424242",
 });
 export const Header = () => {
-  console.log("render");
-
   return (
     <Box position='sticky' component='header' sx={{ flexGrow: 1, height: 50 }}>
       <StyledAppBar sx={{ top: 0 }}>
