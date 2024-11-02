@@ -6,7 +6,13 @@ interface Values {
   email: string;
   message: string;
 }
-export const Form = () => {
+export const Form = ({
+  setResponseData,
+  load,
+}: {
+  setResponseData: (name: string) => void;
+  load: (isLoading: boolean) => void;
+}) => {
   return (
     <Formik
       initialValues={{ name: "", email: "", message: "" }}
@@ -31,11 +37,32 @@ export const Form = () => {
         }
         return errors;
       }}
-      onSubmit={(values, { setSubmitting }: FormikHelpers<Values>) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
+      onSubmit={async (
+        values,
+        { setSubmitting, resetForm }: FormikHelpers<Values>
+      ) => {
+        load(true);
+        try {
+          const response = await fetch("http://localhost:3000/api/send", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(values),
+          });
+
+          const data = await response.json();
+          if (data) {
+            setResponseData(data.name);
+          }
+          resetForm();
+        } catch (error) {
+          console.error("Form submission error:", error);
+        } finally {
+          load(false);
           setSubmitting(false);
-        }, 300);
+        }
       }}
     >
       {({
