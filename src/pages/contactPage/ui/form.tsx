@@ -1,6 +1,5 @@
 import { Formik, FormikHelpers } from "formik";
 import { Box, Button, TextField } from "@mui/material";
-const apiUrl = import.meta.env.VITE_API_URL;
 
 interface Values {
   name: string;
