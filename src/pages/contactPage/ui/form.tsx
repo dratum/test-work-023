@@ -1,5 +1,6 @@
 import { Formik, FormikHelpers } from "formik";
 import { Box, Button, TextField } from "@mui/material";
+const URL = import.meta.env.VITE_API_URL || process.env.NEXT_PUBLIC_API_UR;
 
 interface Values {
   name: string;
@@ -43,17 +44,14 @@ export const Form = ({
       ) => {
         load(true);
         try {
-          const response = await fetch(
-            "https://test-work-023.vercel.app/api/send",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              body: JSON.stringify(values),
-            }
-          );
+          const response = await fetch(`${URL}`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(values),
+          });
 
           const data = await response.json();
           if (data) {
