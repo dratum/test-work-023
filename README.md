@@ -13,4 +13,5 @@ For a preview in the production build, you can visit <https://test-work-023.verc
 3. MaterialUI for creating components and styling;
 4. Formik for creating the form;
 5. React-player for YouTube component;
-6. FSD for structuring the project architecture.
+6. Deploy and hosting on Vercel;
+7. FSD for structuring the project architecture.
